@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-primary: #1e293b; /* Charcoal / Deep Navy */
+  --color-accent: #3b82f6;  /* Muted Blue */
+  
+  --color-safe: #10b981;
+  --color-caution: #f59e0b;
+  --color-danger: #ef4444;
+  
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+  --radius-5xl: 3rem;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased overflow-hidden transition-colors duration-700;
+  }
+  body.dark {
+    @apply bg-zinc-950 text-zinc-100;
+  }
+  body.light {
+    @apply bg-zinc-50 text-zinc-900;
+  }
+}
+
+.premium-card {
+  @apply transition-all duration-300 border;
+}
+
+.dark .premium-card {
+  @apply bg-zinc-900/50 border-white/5 shadow-lg;
+}
+
+.light .premium-card {
+  @apply bg-white border-black/5 shadow-sm;
+}
+
+.radar-circle {
+  @apply absolute rounded-full border transition-all duration-1000;
+}
+
+.dark .radar-circle {
+  @apply border-white/10;
+}
+
+.light .radar-circle {
+  @apply border-black/5;
+}
+
+.radar-marker {
+  @apply absolute w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_8px_rgba(59,130,246,0.5)];
+}
+
+.scan-indicator {
+  @apply absolute top-0 left-1/2 w-px h-1/2 origin-bottom;
+  background: linear-gradient(to top, var(--color-accent), transparent);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-800/50 rounded-full;
+}

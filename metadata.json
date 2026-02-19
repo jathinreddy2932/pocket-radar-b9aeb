@@ -1,0 +1,8 @@
+{
+  "name": "Pocket Safety Radar",
+  "description": "An offline-first safety awareness app that evaluates environmental risk using device sensors like location, ambient noise, and device density.",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone"
+  ]
+}
